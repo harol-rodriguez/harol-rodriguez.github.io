@@ -1,0 +1,83 @@
+.header{
+    position: fixed;
+    z-index: 15;
+    display: inline;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: solid 55px $c-white;
+    &__logo{
+      background: $c-yellow;
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      border-radius: 7px;
+      position: relative;
+      top: -22px;
+    }
+    &__search{
+      background: $c-white;
+      height: 50px;
+      display: flex;
+      position: relative;
+      z-index: 5;
+      width: calc(100% - 27px);
+      max-width: 770px;
+      margin: auto;
+      top: -25px;
+      @include tablet-min{
+        position: relative;
+        height: 75px;
+      }
+      @include mobile-only{
+        width: calc(100% - 27px);
+        left: -10;
+      }
+      &-input{
+        display: block;
+        width: 100%;
+        padding: 15px 20px 15px 45px;
+        outline: none;
+        border: 0;
+        background-color: transparent;
+        color: $c-dark;
+        font-weight: 300;
+        font-size: 16px;
+        @include tablet-min{
+          padding: 15px 30px 15px 60px;
+        }
+        @include tablet-landscape-min{
+          padding: 15px 30px 15px 80px;
+        }
+        @include desktop-min{
+          padding: 15px 30px 15px 90px;
+        }
+      }
+      &-icon{
+        width: 14px;
+        height: 14px;
+        fill: rgba($c-dark, 0.5);
+        transition: fill 0.5s ease;
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        margin-top: -7px;
+        left: 20px;
+        @include tablet-min{
+          width: 18px;
+          height: 18px;
+          margin-top: -9px;
+          left: 30px;
+        }
+        @include tablet-landscape-min{
+          left: 50px;
+        }
+        @include desktop-min{
+          left: 60px;
+        }
+      }
+      &-input:focus + &-icon{
+        fill: $c-dark;
+      }
+    }
+  }

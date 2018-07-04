@@ -1,0 +1,118 @@
+.movies-item{
+  background: $c-white;
+  @include sombra(-0.5px, 1.5px, 4.5px, 125, 125, 125, 0.15);
+  @include redondeado(1.5px,1.5px,1.5px,1.5px);
+  margin-bottom: 35px;
+  &__link{
+    text-decoration: none;
+    color: $c-dark;
+    font-weight: 300;
+  }
+  &__content{
+    padding: 15px;
+    height: 60px;
+    line-height: 0.8;
+    position: relative;
+    @include tablet-min{
+      height: 80px;
+    }
+  }
+  &__genres{
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px;
+    &--item{
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+      font-size: 13px;
+      color: $c-yellow;
+      &::after{
+        content: ',';
+        margin-right: 5px;
+      }
+      &:last-of-type::after{
+        content: '';
+        margin-right: 0;
+      }
+
+    }
+  }
+  &__vote{
+    position: absolute;
+    bottom: 13px;
+    left: 13px; 
+    padding: 5px 0; 
+    display: inline-flex;
+    p{
+      font-size: 21px; 
+      margin: 0;
+    }
+    &--empty{
+      position: absolute;
+    }
+    &--percent{
+      position: relative;
+      margin-right: 5px;
+      left: 0;
+      top: 0;
+      height: 100%;
+      margin-top: auto;
+      overflow: hidden;
+      img{
+        position: relative;
+        bottom: 0;
+      }
+      &1{
+        top:20px;
+        img{
+          bottom: 20px;
+        }
+      }
+      &2{
+        top:13px;
+        img{
+          bottom: 13px;
+        }
+      }
+      &3{
+        top:7px;
+        img{
+          bottom: 7px;
+        }
+      }
+      &4{
+        top:2px;
+        img{
+          bottom: 2px;
+        }
+      }
+    }
+  }
+  &__btnDetalle{
+    position: absolute;
+    bottom: 13px;
+    right: 13px;   
+  }
+  &__title{
+    margin: 0 0 4px 0;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    transition: color 0.5s ease;
+    text-transform: uppercase; 
+    overflow: hidden;
+    @include mobile-ls-min{
+      font-size: 14px;
+      line-height: 14px;    
+      max-height: 27px;
+    }
+    @include tablet-landscape-min{
+      font-size: 16px;
+      line-height: 16px;
+      max-height: 30px;
+    }
+  }
+  &__link:hover &__title{
+    color: $c-dark;
+  }
+}

@@ -1,0 +1,12 @@
+$font_path: '/dist/fonts/';
+
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: url($font_path+'GothamRounded-Medium.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: url($font_path+'GothamRounded-Book.ttf') format('truetype');
+    font-weight: 200;
+}

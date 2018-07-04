@@ -1,0 +1,234 @@
+
+.movie{
+  @include sombra(4px, 4px, 17px, 125, 125, 125, 0.15);
+  position: relative;
+  margin-bottom: 20px;
+  &__wrap{
+    display: flex;
+    &--page{
+      max-width: 768px;
+      position: relative;
+      margin: 0 auto;
+    }
+    &--header{
+      align-items: center;
+      height: 100%;
+    }
+    &--main{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      @include tablet-min{
+        flex-direction: row;
+      }
+    }
+  }
+  &__poster{
+    display: none;
+    position: relative;
+    @include tablet-min{
+      background: $c-dark;
+      display: block;
+      width: calc(45% - 40px);
+    }
+  }
+  &__img{
+    display: block;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.97) translateZ(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    &.is-loaded{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  &__title{
+    width: 54%;
+    background: $c-white;
+    @include sombra(4px, 4px, 17px, 125, 125, 125, 0.15);
+    @include redondeado(1.5px,1.5px,1.5px,1.5px);
+    position: absolute;
+    margin-right: 51px;
+    padding: 15px;
+    top: 28px;
+    right: 0;
+    // @include tablet-min{
+    //   width: 55%;
+    //   text-align: left;
+    //   margin-left: 45%;
+    //   padding: 30px 30px 30px 40px;
+    // }
+    &--text{
+      margin: 0;
+      font-weight: 500;
+      line-height: 1.4;
+      font-size: 18px;
+      max-height: 18px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba($c-dark, 0.07);
+      text-transform: uppercase;
+      @include tablet-min{
+        font-size: 23px;
+        max-height: 25px;
+      }
+      span{
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+        color: rgba($c-white, 0.7);
+        margin-top: 10px;
+      }
+    }
+    &--genres{
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 80%;
+      margin-top: 12px;
+      position: relative;
+      p{
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 200;
+        color: $c-yellow;
+        &::after{
+          content: ',';
+          margin-right: 5px;
+        }
+        &:last-of-type::after{
+          content: '';
+          margin-right: 0;
+        }
+  
+      }
+    }
+  }
+  &__description{
+    font-weight: 200;
+    font-size: 13px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    width: 56%;
+    right: 0;
+    margin-right: 16px;    
+    max-height: 170px;
+    overflow: scroll;
+    margin-top: 231px;
+
+    @include tablet-min{
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+  }
+  &__language{
+    background: $c-light;
+    @include redondeado(5px,5px,5px,5px);
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 83px;
+    p{
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 14px;    
+      color: $c-dark;
+    }
+  }
+  &__detail{
+    display: inline-flex;
+    position: relative;
+    width: 90%;
+    margin-top: 17px;
+    div{
+      margin: auto;
+      span{
+        font-size: 12px;
+        font-weight: 200;
+        color: rgba($c-dark,0.5);    
+        display: table;
+        margin: auto;
+      }
+    }
+    &--value{
+      font-weight: 200;
+      font-size: 23px;
+      margin: 0;
+    }
+    &--ico{
+      img{
+        width: 24px;
+        margin-right: 5px;
+      }
+      .heart-empty{
+        position: absolute;
+      }
+      .heart-percent{
+        position: relative;
+        left: 0;
+        top: 0;
+        height: 100%;
+        margin-top: auto;
+        overflow: hidden;
+        img{
+          position: relative;
+          bottom: 0;
+        }
+        &1{
+          top:20px;
+          img{
+            bottom: 20px;
+          }
+        }
+        &2{
+          top:13px;
+          img{
+            bottom: 13px;
+          }
+        }
+        &3{
+          top:7px;
+          img{
+            bottom: 7px;
+          }
+        }
+        &4{
+          top:2px;
+          img{
+            bottom: 2px;
+          }
+        }
+      }
+    }
+    &--rating{
+      &-value{
+        display: inline-flex;
+      }
+    }
+  }
+  &__date{
+    height: 50px;
+    // width: 115px;
+    padding: 2px 15px;
+    position: absolute;
+    background: $c-dark;
+    display: inline-flex;
+    right: 0;
+    bottom: 0;
+    p{
+      text-align: center;
+      color: $c-white;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    img{
+      width: 25px;
+      margin: auto;
+      margin-right: 5px;
+    }
+  }
+}
